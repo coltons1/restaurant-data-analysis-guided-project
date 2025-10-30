@@ -56,7 +56,7 @@ plt.ylabel('# of restaurants')
 plt.xlabel('types of restaurants')
 
 # - Do restaurants that allow you to book tables have higher ratings?
-# Now we are oging to look at rest_allow_booking and examine their ratings, then we will compare it to restaurants that dont allow bookings. 
+# Now we are going to look at rest_allow_booking and examine their ratings, then we will compare it to restaurants that dont allow bookings. 
 
 rest_disallow_booking = restAndBooking[restAndBooking["book_table"] == 0]
 
@@ -66,4 +66,22 @@ plt.title('# of restaurant types that dont allow booking')
 plt.ylabel('# of restaurants')
 plt.xlabel('types of restaurants')
 
+type_booking_rating = dataframe[["listed_in(type)", "book_table", "rate"]]
+allow_booking_and_ratings = type_booking_rating[type_booking_rating["book_table"] == 1]
+#print(allow_booking_and_ratings)
+
+#box plot showing the range of ratings that DO allow bookings
+plt.figure(4)
+sns.boxplot(data=allow_booking_and_ratings, x=allow_booking_and_ratings["listed_in(type)"], y=allow_booking_and_ratings["rate"])
+plt.title('ratings of restaurants that accept bookings')
+plt.xlabel('types of restaurants')
+plt.ylabel('ratings')
+
+#box plot showing the range of ratings for those that DO NOT allow bookings
+disallow_booking_and_ratings = type_booking_rating[type_booking_rating["book_table"] == 0]
+plt.figure(5)
+sns.boxplot(data=disallow_booking_and_ratings, x=disallow_booking_and_ratings["listed_in(type)"], y=disallow_booking_and_ratings["rate"])
+plt.title('ratings of restaurants that dont accept bookings')
+plt.xlabel('types of restaurants')
+plt.ylabel('ratings')
 plt.show()
