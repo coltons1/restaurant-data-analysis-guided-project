@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import math
 
 #preprocessing / cleaning the data for additional use / figures. 
 #Taken from main.py file and the tutorial. 
@@ -118,5 +119,7 @@ BookingMeanData = {
 bMD = pd.DataFrame(BookingMeanData)
 bMD = bMD.rename(index={0: 'Allows Booking Means'})
 bMD = bMD.rename(index={1: 'Disallows Booking Means'})
-
+bMD = bMD.round(3)
 print(bMD)
+
+plt.show()
