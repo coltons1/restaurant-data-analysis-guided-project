@@ -84,4 +84,39 @@ sns.boxplot(data=disallow_booking_and_ratings, x=disallow_booking_and_ratings["l
 plt.title('ratings of restaurants that dont accept bookings')
 plt.xlabel('types of restaurants')
 plt.ylabel('ratings')
-plt.show()
+
+#next we will show the means between the different ranges broken down by category. 
+
+#means of types of restaurants that allow booking
+cafesThatBook_ratings = allow_booking_and_ratings[allow_booking_and_ratings['listed_in(type)'] == "Cafes"]
+buffetThatBook_ratings = allow_booking_and_ratings[allow_booking_and_ratings['listed_in(type)'] == "Buffet"]
+diningThatBook_ratings = allow_booking_and_ratings[allow_booking_and_ratings['listed_in(type)'] == "Dining"]
+otherThatBook_ratings = allow_booking_and_ratings[allow_booking_and_ratings['listed_in(type)'] == "other"]
+
+cafeBookMean = cafesThatBook_ratings['rate'].mean()
+buffetBookMean = buffetThatBook_ratings['rate'].mean()
+diningBookMean = diningThatBook_ratings['rate'].mean()
+otherBookMean = otherThatBook_ratings['rate'].mean()
+
+cafesNoBooking_ratings = disallow_booking_and_ratings[disallow_booking_and_ratings['listed_in(type)'] == "Cafes"]
+buffetNoBooking_ratings = disallow_booking_and_ratings[disallow_booking_and_ratings['listed_in(type)'] == "Buffet"]
+diningNoBooking_ratings = disallow_booking_and_ratings[disallow_booking_and_ratings['listed_in(type)'] == "Dining"]
+otherNoBooking_ratings = disallow_booking_and_ratings[disallow_booking_and_ratings['listed_in(type)'] == "other"]
+
+cafeNoBookMean = cafesNoBooking_ratings['rate'].mean()
+buffetNoBookMean = buffetNoBooking_ratings['rate'].mean()
+diningNoBookMean = diningNoBooking_ratings['rate'].mean()
+otherNoBookMean = otherNoBooking_ratings['rate'].mean()
+
+BookingMeanData = {
+    'Cafes' : [cafeBookMean, cafeNoBookMean],
+    'Buffet': [buffetBookMean, buffetNoBookMean],
+    'Dining': [diningBookMean, diningNoBookMean],
+    'Other' : [otherBookMean, otherNoBookMean]
+}
+
+bMD = pd.DataFrame(BookingMeanData)
+bMD = bMD.rename(index={0: 'Allows Booking Means'})
+bMD = bMD.rename(index={1: 'Disallows Booking Means'})
+
+print(bMD)
