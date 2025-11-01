@@ -61,8 +61,8 @@ After these graphs, I shifted my focus towards the ratings of the restaurants. I
 I then used matplotlib and seaborn to create a box plot to show the range and median of the ratings across the different categories of the restaurants. 
 
 <div display=flex>
-  <img src="./my-figures/Figure_4.png" width=450>
-  <img src="./my-figures/Figure_5.png" width=450>
+  <img src="./my-figures/Figure_4.png" width=447>
+  <img src="./my-figures/Figure_5.png" width=447>
 </div>
 
 Overall from these graphs, we can see that the ratings of the restaurants that accept bookings, with exception of Dining restaurants, bookings led to higher ratings in restaurants. 
