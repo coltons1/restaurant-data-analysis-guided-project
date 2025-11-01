@@ -120,6 +120,9 @@ bMD = pd.DataFrame(BookingMeanData)
 bMD = bMD.rename(index={0: 'Allows Booking Means'})
 bMD = bMD.rename(index={1: 'Disallows Booking Means'})
 bMD = bMD.round(3)
+
+print("\n")
 print(bMD)
+print("\n")
 
 plt.show()

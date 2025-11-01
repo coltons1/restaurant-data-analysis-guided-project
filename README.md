@@ -29,17 +29,23 @@ def handleBooking(value):
     return int(value)
 dataframe['book_table']=dataframe['book_table'].apply(handleBooking)
 ```
-I used this handleBooking function to convert the 'Yes' and 'No' from the 'book_table' column of the data frame to '1's and '0's for easier processing. 
+I used this handleBooking function to convert the 'Yes' and 'No' from the 'book_table' column of the data frame to '1's and '0's. This made it easier for me to work on 
+finding which restaurants offered reservations compared to those that do not. 
 
 ### How many restaurants allow you to book a table?
 This was a simpler question I used as a jumping off point. I used matplotlib and seaborn to create a countplot base off of the 'book_table' section of my dataframe. 
+I used a countplot here because it was one of the first plots I made with seaborn and matplotlib and seemed like an easy fit for this application and the next. Simply 
+totaling the restaurants that do or do not allow reservations. 
 <p align="center">
   <img src="./my-figures/Figure_1.png" alt="Figure 1: A count plot from seaborn and matplotlib titled 'Restaurants that allow reservations.'"/>
 </p>
-Obviously, the graph shows that the restaurants that allow reserving tables is in the minority. So we are dealing with a smaller subset of our main dataset. 
+Obviously, the graph shows that the restaurants that allow reserving tables is in the minority, under even 10 restaraunts. This will greatly impact the effectiveness of 
+my conclusions later because of such a small sample size. 
 
 ### What types of restaurants allow you to book a table?
-Here I wanted to break down that previous graph down to only the 'Yes' section. 
+Here I wanted to break down that previous graph down to only the 'Yes' section. This allows the viewers to gain a better understanding of which types of restaurants
+often allow reservations. I was personally surprised that Cafes were the most common, I would have expected Dining to be the most common. However, the sample is extremely small,
+about 8 elements. Additionally there may be a difference in culture as this data is from 'Zomato' which is an Indian food delivery app. 
 
 <p align="center">
   <img src="./my-figures/Figure_2.png" alt="Figure 2: A count plot from seaborn and matplotlib titled '# of restaurant types that allow booking.'"/>
