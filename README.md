@@ -52,7 +52,7 @@ about 8 elements. Additionally there may be a difference in culture as this data
 </p>
 
 ### Now, do restaurants that allow you to book tables have higher ratings?
-To start here, following up from the previous question, I wanted to create a graph of the restaurant types of that don't allow booking tables. 
+Following up from the previous question, I wanted to create a graph of the restaurant types of that don't allow booking tables. This graph was to show what the rest of the restaurant breakdown looked like, primarily Dining restaurants. 
 <p align="center">
   <img src="./my-figures/Figure_3.png" alt="Figure 3: A count plot from seaborn and matplotlib titled '# of restaurant types that don't allow booking'."/>  
 </p>
@@ -61,8 +61,8 @@ After these graphs, I shifted my focus towards the ratings of the restaurants. I
 I then used matplotlib and seaborn to create a box plot to show the range and median of the ratings across the different categories of the restaurants. 
 
 <div display=flex>
-  <img src="./my-figures/Figure_4.png" width=500>
-  <img src="./my-figures/Figure_5.png" width=500>
+  <img src="./my-figures/Figure_4.png" width=450>
+  <img src="./my-figures/Figure_5.png" width=450>
 </div>
 
 Overall from these graphs, we can see that the ratings of the restaurants that accept bookings, with exception of Dining restaurants, bookings led to higher ratings in restaurants. 
